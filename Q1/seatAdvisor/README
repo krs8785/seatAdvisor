@@ -1,0 +1,15 @@
+Project Structure
+
+src
+   main
+       java
+           com
+              sa
+                seatAdvisor
+                          event/
+                          organization/
+			  performance/
+                          venue/
+
+
+

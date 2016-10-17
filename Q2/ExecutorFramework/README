@@ -1,0 +1,34 @@
+#### Description: ####
+
+The Executor framework allows to concurrently process task interface. The executor class creates N worker thread which are running in the background waiting for task in a blockingQueue. The client can submit task to the executor which adds the task into the queue. The task in wrapped in a future object which is returned and tracks the progress of the task.
+
+The Executor Class
+Constructor Executor(int numThreads)
+-Creates N worker thread
+Method submit(Task t) Returns TaskFuture Throws InterruptedException
+-Client can submit the task and use retured TaskFuture object to check status of the task
+
+Task Interface
+-Similar to Runnable/Callable interface. Client can implement the task interface
+
+TaskFuture Class
+- This class allows query to see if the computation is complete, and retrieve the result of the computation. The result can only be retrieved when the computation has completed; the get methods will block if the computation has not yet completed. A TaskFuture can be used to wrap a Task object
+Method isDone()
+-Check if computation is done return true otherwise false 
+Method get() 
+-Get the result of the computation. Wait till computation is finished
+Method get(long time)
+-Get the result of computation within particular time otherwise timeout
+
+
+
+#### Requirement: ####
+
+Java 1.5
+Maven
+
+#### How to run: ####
+
+I have created few test cases so you can run using mvn test command or you can create your own client and use the library
+
+
